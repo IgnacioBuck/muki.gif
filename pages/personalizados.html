@@ -1,138 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personalizados | Muki.gif</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/productosDetalles.css">
-    <link rel="stylesheet" href="../css/personalizados.css">
-        <link rel="stylesheet" href="../css/carroFlotante.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personalizados | Muki.gif</title>
+
+<!-- Hojas de estilo con rutas relativas correctas -->
+<link rel="stylesheet" href="../css/cards.css">
+<link rel="stylesheet" href="../css/carroFlotante.css">
+<link rel="stylesheet" href="../css/hero.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/productosDetalles.css">
+<link rel="stylesheet" href="../css/personalizados.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- HEADER / NAVBAR -->
     <header class="navbar">
-    <div class="logo">
-        <a href="index.html" class="logo">
+        <div class="nav-left">
+        <button type="button" class="btn-menu-toggle" id="menu-toggle" onclick="toggleMenuMovil()" aria-label="Abrir menú">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        <div class="logo">
+            <a href="index.html">
             <h1>MUKI.GIF</h1>
-        </a>
-    </div>
-    <nav class="nav-links">
-        <a href="#destacados">COMBOS</a>
-        <a href="#stickers">STICKERS</a>
-        <a href="#llaveros">LLAVEROS</a>
-        <a href="#cuadernos">CUADERNOS</a>
-        <a href="personalizados.html" class="nav-highlight">PERSONALIZADO</a>
-    </nav>
-    <button class="cart-icon-btn" id="open-cart-btn">
-        <span class="material-symbols-outlined">shopping_bag</span>
-        <span class="cart-count" id="cart-count">0</span>
-    </button>
-    </header>
-
-    <main class="container custom-page">
-        <div class="custom-header">
-            <h2>Armá tu Producto Personalizado</h2>
-            <p>Diseñamos tus stickers, llaveros o cuadernos con la imagen que más te guste.</p>
+            </a>
+        </div>
         </div>
 
-    <!-- PASO 1: ELEGIR TIPO -->
-    <section class="step-card">
+        <nav class="nav-links" id="nav-menu">
+        <a href="index.html#destacados" onclick="cerrarMenuMovil()">COMBOS</a>
+        <a href="index.html#stickers" onclick="cerrarMenuMovil()">STICKERS</a>
+        <a href="index.html#llaveros" onclick="cerrarMenuMovil()">LLAVEROS</a>
+        <a href="index.html#cuadernos" onclick="cerrarMenuMovil()">CUADERNOS</a>
+        <a href="personalizados.html" class="nav-highlight" onclick="cerrarMenuMovil()">PERSONALIZADO</a>
+        </nav>
+
+        <div class="nav-actions">
+        <!-- BOTÓN DEL CARRITO CON ID Y ONCLICK EXPLÍCITO -->
+        <button type="button" class="cart-icon-btn" id="open-cart-btn" onclick="abrirCarritoDrawer()" aria-label="Ver carrito">
+            <span class="material-symbols-outlined">shopping_bag</span>
+            <span class="cart-count" id="cart-count">0</span>
+        </button>
+        </div>
+    </header>
+
+<!-- CONTENIDO DE PERSONALIZADOS -->
+    <main class="container custom-page">
+        <div class="custom-header">
+        <h2>Armá tu Producto Personalizado ✨</h2>
+        <p>Diseñamos tus stickers, llaveros o cuadernos con la imagen que más te guste.</p>
+        </div>
+
+        <!-- PASO 1 -->
+        <section class="step-card">
         <div class="step-badge">Paso 1</div>
         <h3>Seleccioná el tipo de producto</h3>
         <div class="product-type-grid">
-        <label class="type-option">
+            <label class="type-option">
             <input type="radio" name="tipoProducto" value="Sticker Personalizado" checked>
             <div class="option-box">
-            <span class="material-symbols-outlined">style</span>
-            <span>Sticker</span>
+                <span class="material-symbols-outlined">style</span>
+                <span>Sticker</span>
             </div>
             </label>
             <label class="type-option">
             <input type="radio" name="tipoProducto" value="Llavero Personalizado">
             <div class="option-box">
-            <span class="material-symbols-outlined">key</span>
-            <span>Llavero</span>
+                <span class="material-symbols-outlined">key</span>
+                <span>Llavero</span>
             </div>
-        </label>
-        <label class="type-option">
+            </label>
+            <label class="type-option">
             <input type="radio" name="tipoProducto" value="Cuaderno Personalizado">
             <div class="option-box">
-            <span class="material-symbols-outlined">menu_book</span>
-            <span>Cuaderno</span>
+                <span class="material-symbols-outlined">menu_book</span>
+                <span>Cuaderno</span>
             </div>
-        </label>
+            </label>
         </div>
-    </section>
+        </section>
 
-    <!-- PASO 2: CANTIDAD -->
-    <section class="step-card">
+        <!-- PASO 2 -->
+        <section class="step-card">
         <div class="step-badge">Paso 2</div>
         <h3>¿Cuántas unidades querés?</h3>
         <div class="qty-selector-custom">
-        <button type="button" id="btn-custom-minus">-</button>
-        <input type="number" id="input-custom-qty" value="1" min="1" readonly>
-        <button type="button" id="btn-custom-plus">+</button>
+            <button type="button" id="btn-custom-minus">-</button>
+            <input type="number" id="input-custom-qty" value="1" min="1" readonly>
+            <button type="button" id="btn-custom-plus">+</button>
         </div>
-    </section>
+        </section>
 
-    <!-- PASO 3: ARCHIVOS Y GUÍA DE CALIDAD -->
-    <section class="step-card">
+        <!-- PASO 3 -->
+        <section class="step-card">
         <div class="step-badge">Paso 3</div>
         <h3>¿Cómo enviar tus fotos sin perder calidad?</h3>
         <div class="guide-box">
-        <div class="guide-item">
+            <div class="guide-item">
             <span class="material-symbols-outlined icon-guide">description</span>
             <div>
-            <h4>Opción 1: Enviar como Documento en WhatsApp (Recomendado)</h4>
-            <p>Al hacer el pedido por WhatsApp, enviá la imagen adjuntándola como <strong>"Documento"</strong> en vez de "Foto/Video". Así WhatsApp no comprime la calidad original.</p>
+                <h4>Opción 1: Enviar como Documento en WhatsApp (Recomendado)</h4>
+                <p>Al hacer el pedido por WhatsApp, enviá la imagen adjuntándola como <strong>"Documento"</strong> en vez de "Foto/Video". Así WhatsApp no comprime la calidad original.</p>
             </div>
-        </div>
+            </div>
 
-        <div class="guide-item">
+            <div class="guide-item">
             <span class="material-symbols-outlined icon-guide">cloud_upload</span>
             <div>
-            <h4>Opción 2: Pegar Link (Drive / WeTransfer / Dropbox)</h4>
-            <p>Si tenés varias fotos o archivos pesados, pegá el enlace público aquí abajo:</p>
-            <input type="url" id="input-custom-link" placeholder="https://wetransfer.com/... o Google Drive link">
+                <h4>Opción 2: Pegar Link (Drive / WeTransfer / Dropbox)</h4>
+                <p>Si tenés varias fotos o archivos pesados, pegá el enlace público aquí abajo:</p>
+                <input type="url" id="input-custom-link" placeholder="https://wetransfer.com/... o Google Drive link">
+            </div>
             </div>
         </div>
-        </div>
 
-    <!-- BOTÓN AGREGAR Y ENCARGAR -->
         <button type="button" class="btn-primary-lg btn-full" id="btn-add-custom">
-        <span class="material-symbols-outlined">add_shopping_cart</span>
-        Agregar Personalizado al Carrito
+            <span class="material-symbols-outlined">add_shopping_cart</span>
+            Agregar Personalizado al Carrito
         </button>
-    </section>
+        </section>
     </main>
 
     <!-- MODAL / DRAWER DEL CARRITO -->
-    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-overlay" id="cart-overlay" onclick="cerrarCarritoDrawer()"></div>
     <aside class="cart-drawer" id="cart-drawer">
-    <div class="cart-header">
+        <div class="cart-header">
         <h3>Tu Carrito</h3>
-        <button type="button" class="close-cart-btn" id="close-cart-btn">&times;</button>
-    </div>
+        <button type="button" class="close-cart-btn" id="close-cart-btn" onclick="cerrarCarritoDrawer()">&times;</button>
+        </div>
 
-    <div class="cart-items" id="cart-items-container">
-        <!-- Se llena dinámicamente con JS -->
-    </div>
+        <div class="cart-items" id="cart-items-container">
+        <!-- Se llena dinámicamente -->
+        </div>
 
-    <div class="cart-footer">
+        <div class="cart-footer">
         <div class="cart-total">
-        <span>Total:</span>
-        <strong id="cart-total-price">$0</strong>
+            <span>Total:</span>
+            <strong id="cart-total-price">$0</strong>
         </div>
         <button type="button" class="btn-checkout" id="btn-checkout-wa">
-        Encargar por WhatsApp
+            Encargar por WhatsApp
         </button>
         </div>
-    </aside>
+        </aside>
 
-
+<!-- SCRIPTS EN ORDEN CORRECTO -->
 <script src="../js/cart.js"></script>
 <script src="../js/personalizados.js"></script>
 </body>
