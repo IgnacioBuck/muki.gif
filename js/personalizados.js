@@ -25,6 +25,21 @@ document.addEventListener('DOMContentLoaded', () => {
     "Cuaderno Personalizado": 5000
   };
 
+  // Funciones del menú desplegable móvil para personalizados.html
+function toggleMenuMovil() {
+  const navMenu = document.getElementById('nav-menu');
+  if (navMenu) {
+    navMenu.classList.toggle('active');
+  }
+}
+
+function cerrarMenuMovil() {
+  const navMenu = document.getElementById('nav-menu');
+  if (navMenu) {
+    navMenu.classList.remove('active');
+  }
+}
+
   const btnAdd = document.getElementById('btn-add-custom');
   if (btnAdd) {
     btnAdd.addEventListener('click', () => {
