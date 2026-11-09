@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Producto | Muki.gif</title>
+
+  <!-- ESTILOS CSS -->
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/productosDetalles.css">
+  <link rel="stylesheet" href="../css/carroFlotante.css">
+  
+  <!-- ICONOS DE GOOGLE MATERIAL SYMBOLS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+
+  <!-- NAVBAR ORIGINAL -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html" class="logo">
+        <h1>MUKI.GIF</h1>
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="#destacados">COMBOS</a>
+      <a href="#stickers">STICKERS</a>
+      <a href="#llaveros">LLAVEROS</a>
+      <a href="#cuadernos">CUADERNOS</a>
+      <a href="personalizados.html" class="nav-highlight">✨ Personalizados</a>
+    </nav>
+    <button class="cart-icon-btn" id="open-cart-btn">
+      <span class="material-symbols-outlined">shopping_bag</span>
+      <span class="cart-count" id="cart-count">0</span>
+    </button>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL: DETALLE DEL PRODUCTO -->
+  <main class="container detail-container">
+    
+    <!-- GALERÍA / FOTO DEL PRODUCTO (Lado Izquierdo) -->
+    <div class="product-gallery">
+      <div class="main-image">
+        <img id="detail-img-main" src="" alt="Cargando producto...">
+      </div>
+    </div>
+
+    <!-- INFORMACIÓN Y ACCIONES DE COMPRA (Lado Derecho) -->
+    <div class="product-purchase-info">
+      <span class="stock-badge">Disponible</span>
+      <h1 id="detail-title">Cargando producto...</h1>
+      <p class="price" id="detail-price">$0</p>
+      
+      <div class="description-box">
+        <h3>Descripción del producto</h3>
+        <p id="detail-description">Cargando detalles...</p>
+      </div>
+
+      <!-- SELECTOR DE CANTIDAD -->
+      <div class="quantity-selector">
+        <label for="input-qty">Cantidad:</label>
+        <div class="qty-controls">
+          <button type="button" id="btn-minus">-</button>
+          <input type="number" id="input-qty" value="1" min="1" readonly>
+          <button type="button" id="btn-plus">+</button>
+        </div>
+      </div>
+
+      <!-- BOTONES DE ACCIÓN -->
+      <div class="purchase-actions">
+        <button type="button" class="btn btn-primary btn-full" id="btn-add-to-cart-detail">
+          <span class="material-symbols-outlined">add_shopping_cart</span>
+          Agregar al carrito
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- CARRITO LATERAL DESPLEGABLE (DRAWER) -->
+  <div class="cart-overlay" id="cart-overlay" onclick="cerrarCarritoDrawer()"></div>
+  
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Tu Carrito</h3>
+      <button type="button" class="close-btn" id="close-cart-btn" onclick="cerrarCarritoDrawer()">&times;</button>
+    </div>
+    
+    <div class="cart-body" id="cart-items-container">
+      <p class="empty-cart-msg">El carrito está vacío por ahora.</p>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <strong id="cart-total-price">$0</strong>
+      </div>
+      <button type="button" class="btn-whatsapp" id="btn-checkout-wa">
+        Encargar por WhatsApp 📱
+      </button>
+    </div>
+  </aside>
+
+  <!-- VINCULACIÓN DE SCRIPTS JS -->
+  <script src="../js/producto.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/productoDetalles.js"></script>
+</body>
+</html>

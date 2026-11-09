@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MUKI.GIF</title>
+  <link rel="stylesheet" href="../css/cards.css">
+  <link rel="stylesheet" href="../css/carroFlotante.css">
+  <link rel="stylesheet" href="../css/hero.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/productosDetalles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+
+  <!-- NAVBAR FLOTANTE CON MENÚ RESPONSIVO -->
+  <!-- NAVBAR CON MENÚ HAMBURGUESA A LA IZQUIERDA -->
+  <header class="navbar">
+    <div class="nav-left">
+      <!-- BOTÓN HAMBURGUESA A LA IZQUIERDA -->
+      <button type="button" class="btn-menu-toggle" id="menu-toggle" onclick="toggleMenuMovil()" aria-label="Abrir menú">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
+      <div class="logo">
+        <a href="index.html">
+          <h1>MUKI.GIF</h1>
+        </a>
+      </div>
+    </div>
+
+    <!-- ENLACES DE NAVEGACIÓN (Ruta directa a personalizados.html) -->
+    <nav class="nav-links" id="nav-menu">
+      <a href="#destacados" onclick="cerrarMenuMovil()">COMBOS</a>
+      <a href="#stickers" onclick="cerrarMenuMovil()">STICKERS</a>
+      <a href="#llaveros" onclick="cerrarMenuMovil()">LLAVEROS</a>
+      <a href="#cuadernos" onclick="cerrarMenuMovil()">CUADERNOS</a>
+      <a href="personalizados.html" class="nav-highlight" onclick="cerrarMenuMovil()">PERSONALIZADO</a>
+    </nav>
+
+    <!-- CARRITO A LA DERECHA -->
+    <div class="nav-actions">
+      <button type="button" class="cart-icon-btn" id="open-cart-btn" onclick="abrirCarritoDrawer()" aria-label="Ver carrito">
+        <span class="material-symbols-outlined">shopping_bag</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION CON DOS IMÁGENES SUPERPUESTAS -->
+<section class="hero-featured" id="hero-featured">
+  <!-- Fondo difuminado -->
+  <div class="hero-bg" id="hero-bg"></div>
+
+  <div class="hero-content">
+
+    <!-- LADO IZQUIERDO: TEXTO Y BOTONES -->
+    <div class="hero-info">
+      <span class="badge">NUEVO</span>
+      <h2 id="featured-title">Llavero</h2>
+      <p id="featured-desc">Llavero redondo Red Dead Redemption estilo cd</p>
+
+      <!-- BOTONES DE ACCIÓN (ALINEADOS EN FILA) -->
+      <div class="hero-actions">
+        <button type="button" class="btn btn-primary" id="btn-buy-featured">Comprar</button>
+        <button type="button" class="btn btn-cart-icon" id="btn-add-featured" title="Agregar al carrito">
+          <span class="material-symbols-outlined">add_shopping_cart</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- LADO DERECHO: DOS FOTOS MONTAADAS/SUPERPUESTAS -->
+    <div class="hero-images-stacked">
+      <div class="card-photo photo-back">
+        <img id="featured-img-2" src="../img/llaveros/LlaveroRedondoAtras - copia.webp" alt="Vista trasera">
+      </div>
+      <div class="card-photo photo-front">
+        <img id="featured-img-1" src="../img/llaveros/llaveroRedDeadDelante.webp" alt="Vista frontal">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- CONTENIDO: SECCIONES DE PRODUCTOS -->
+  <main class="container">
+  <!-- SECCIÓN: LO MÁS VENDIDO -->
+<section class="section-block" id="destacados">
+  <div class="section-header">
+    <h3>🔥 Lo más vendido</h3>
+  </div>
+  <!-- El div debe estar VACÍO para que JS inyecte tus productos reales -->
+  <div class="products-grid" id="grid-top-sellers"></div>
+</section>
+
+<!-- SECCIÓN: STICKERS -->
+<section class="section-block" id="stickers">
+  <div class="section-header">
+    <h3>✨ Stickers Coleccionables</h3>
+  </div>
+  <div class="products-grid" id="grid-stickers"></div>
+</section>
+
+<!-- SECCIÓN: LLAVEROS -->
+<section class="section-block" id="llaveros">
+  <div class="section-header">
+    <h3>🔑 Llaveros Coleccionables</h3>
+  </div>
+  <div class="products-grid" id="grid-llaveros"></div>
+</section>
+
+<!-- SECCIÓN CUADERNOS -->
+<section class="category-section" id="cuadernos">
+  <h3 class="section-title">Cuadernos</h3>
+  <div class="products-grid" id="grid-cuadernos"></div>
+</section>
+
+
+  </main>
+
+  <!-- CARRITO DRAWER (Mantenemos la estructura previa) -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Tu Carrito</h3>
+      <button class="close-btn" id="close-cart-btn">&times;</button>
+    </div>
+    <div class="cart-body" id="cart-items-container">
+      <p class="empty-cart-msg">El carrito está vacío por ahora.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <strong id="cart-total-price">$0</strong>
+      </div>
+      <button class="btn-whatsapp" id="btn-checkout-wa">
+        Encargar por WhatsApp 📱
+      </button>
+    </div>
+  </aside>
+<!-- SCRIPTS -->
+<script src="../js/producto.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>
