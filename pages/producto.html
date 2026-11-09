@@ -17,22 +17,35 @@
 
   <!-- NAVBAR ORIGINAL -->
   <header class="navbar">
-    <div class="logo">
-      <a href="index.html" class="logo">
-        <h1>MUKI.GIF</h1>
-      </a>
+    <div class="nav-left">
+      <!-- BOTÓN HAMBURGUESA A LA IZQUIERDA -->
+      <button type="button" class="btn-menu-toggle" id="menu-toggle" onclick="toggleMenuMovil()" aria-label="Abrir menú">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
+      <div class="logo">
+        <a href="index.html">
+          <h1>MUKI.GIF</h1>
+        </a>
+      </div>
     </div>
-    <nav class="nav-links">
-      <a href="#destacados">COMBOS</a>
-      <a href="#stickers">STICKERS</a>
-      <a href="#llaveros">LLAVEROS</a>
-      <a href="#cuadernos">CUADERNOS</a>
-      <a href="personalizados.html" class="nav-highlight">✨ Personalizados</a>
+
+    <!-- ENLACES DE NAVEGACIÓN (Ruta directa a personalizados.html) -->
+    <nav class="nav-links" id="nav-menu">
+      <a href="#destacados" onclick="cerrarMenuMovil()">COMBOS</a>
+      <a href="#stickers" onclick="cerrarMenuMovil()">STICKERS</a>
+      <a href="#llaveros" onclick="cerrarMenuMovil()">LLAVEROS</a>
+      <a href="#cuadernos" onclick="cerrarMenuMovil()">CUADERNOS</a>
+      <a href="personalizados.html" class="nav-highlight" onclick="cerrarMenuMovil()">PERSONALIZADO</a>
     </nav>
-    <button class="cart-icon-btn" id="open-cart-btn">
-      <span class="material-symbols-outlined">shopping_bag</span>
-      <span class="cart-count" id="cart-count">0</span>
-    </button>
+
+    <!-- CARRITO A LA DERECHA -->
+    <div class="nav-actions">
+      <button type="button" class="cart-icon-btn" id="open-cart-btn" onclick="abrirCarritoDrawer()" aria-label="Ver carrito">
+        <span class="material-symbols-outlined">shopping_bag</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
   </header>
 
   <!-- CONTENIDO PRINCIPAL: DETALLE DEL PRODUCTO -->

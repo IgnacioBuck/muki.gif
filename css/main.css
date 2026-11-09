@@ -111,7 +111,21 @@ body {
   font-size: 2rem;
 }
 
-
+/* NAVBAR FIJA SUPERIOR */
+.navbar,
+.main-header {
+  position: sticky !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2f3640 !important;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Asegura que quede por encima de todo el contenido */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
 
 /* ==========================================
   ADAPTACIÓN PARA PANTALLAS CHICAS / CELULARES
