@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personalizados | Muki.gif</title>
-    <link rel="stylesheet" href="../css/cards.css">
-    <link rel="stylesheet" href="../css/carroFlotante.css">
-    <link rel="stylesheet" href="../css/hero.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/productosDetalles.css">
     <link rel="stylesheet" href="../css/personalizados.css">
+        <link rel="stylesheet" href="../css/carroFlotante.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
@@ -110,6 +108,30 @@
         </button>
     </section>
     </main>
+
+    <!-- MODAL / DRAWER DEL CARRITO -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+        <h3>Tu Carrito</h3>
+        <button type="button" class="close-cart-btn" id="close-cart-btn">&times;</button>
+    </div>
+
+    <div class="cart-items" id="cart-items-container">
+        <!-- Se llena dinámicamente con JS -->
+    </div>
+
+    <div class="cart-footer">
+        <div class="cart-total">
+        <span>Total:</span>
+        <strong id="cart-total-price">$0</strong>
+        </div>
+        <button type="button" class="btn-checkout" id="btn-checkout-wa">
+        Encargar por WhatsApp
+        </button>
+        </div>
+    </aside>
+
 
 <script src="../js/cart.js"></script>
 <script src="../js/personalizados.js"></script>

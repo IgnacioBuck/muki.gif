@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnMinus = document.getElementById('btn-custom-minus');
   const btnPlus = document.getElementById('btn-custom-plus');
 
+  // Control del contador de cantidad
   if (btnMinus && inputQty) {
     btnMinus.addEventListener('click', () => {
       let val = parseInt(inputQty.value) || 1;
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Precios base estimados para los personalizados
+  // Precios base estimados
   const preciosBase = {
     "Sticker Personalizado": 900,
     "Llavero Personalizado": 2800,
@@ -31,16 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const cantidad = parseInt(inputQty.value) || 1;
       const linkArchivo = document.getElementById('input-custom-link')?.value.trim() || '';
 
+      // Crear objeto del producto personalizado
       const productoCustom = {
-        id: Date.now(), // ID único temporal
+        id: Date.now(),
         nombre: `${tipoSeleccionado} ${linkArchivo ? '(Con Link)' : '(Adjunta por WA)'}`,
         precio: preciosBase[tipoSeleccionado] || 1000,
-        imagen: "../img/LlaveroRedDeadDelante.webp", // O una imagen genérica de personalizado
+        imagen: "../img/LlaveroRedDeadDelante.webp",
         cantidad: cantidad
       };
 
+      // Verificar si existe la función global del carrito
       if (typeof agregarAlCarrito === 'function') {
         agregarAlCarrito(productoCustom, cantidad);
+      } else {
+        console.error("No se encontró la función agregarAlCarrito. Verificar que cart.js esté cargado.");
       }
     });
   }
